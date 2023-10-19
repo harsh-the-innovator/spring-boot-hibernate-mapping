@@ -20,7 +20,8 @@ public class DemoApplication {
         return runner -> {
             //createInstructor(appDAO);
             //findInstructor(appDAO);
-            deleteInstructor(appDAO);
+            //deleteInstructor(appDAO);
+            findInstructorDetail(appDAO);
         };
     }
 
@@ -55,5 +56,15 @@ public class DemoApplication {
         System.out.println("Deleting instructor with id: " + id);
         appDAO.deleteById(id);
         System.out.println("Done!");
+    }
+
+    private void findInstructorDetail(AppDAO appDAO){
+        int id = 2;
+        System.out.println("Finding instructor detail by id: " + id);
+        InstructorDetail instructorDetail = appDAO.findInstructorDetailById(id);
+
+        System.out.println("Instructor Detail: " + instructorDetail);
+
+        System.out.println("Associated Instructor: " + instructorDetail.getInstructor());
     }
 }
