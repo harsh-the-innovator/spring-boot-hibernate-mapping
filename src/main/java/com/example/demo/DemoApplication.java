@@ -21,7 +21,8 @@ public class DemoApplication {
             //createInstructor(appDAO);
             //findInstructor(appDAO);
             //deleteInstructor(appDAO);
-            findInstructorDetail(appDAO);
+            //findInstructorDetail(appDAO);
+            deleteInstructorDetailById(appDAO);
         };
     }
 
@@ -66,5 +67,13 @@ public class DemoApplication {
         System.out.println("Instructor Detail: " + instructorDetail);
 
         System.out.println("Associated Instructor: " + instructorDetail.getInstructor());
+        System.out.println("Done!!");
+    }
+
+    public void deleteInstructorDetailById(AppDAO appDAO){
+        int id = 3;
+        System.out.println("Deleting instructor detail by id: " + id);
+        appDAO.deleteInstructorById(id);
+        System.out.println("Done!!");
     }
 }

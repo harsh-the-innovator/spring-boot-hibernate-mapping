@@ -18,7 +18,7 @@ public class InstructorDetail {
     private String hobby;
 
     // this mappedBy value is instructorDetail property in instructor class
-    @OneToOne(mappedBy = "instructorDetail",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "instructorDetail",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
     private Instructor instructor;
 
     public InstructorDetail() {
